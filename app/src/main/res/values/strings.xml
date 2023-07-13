@@ -1,7 +1,4 @@
 <resources>
     <string name="app_name">Admin Panel</string>
-    <string name="open_any_cells">Open any cells</string>
-    <string name="set_cell_status">Set cell status</string>
-    <string name="get_any_parcel">Get any parcel</string>
-    <string name="get_status">Get status</string>
+    <string name="get_request">Get Request</string>
 </resources>

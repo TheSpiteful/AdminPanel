@@ -47,47 +47,15 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_open_cells"
+                android:id="@+id/btnGetRequest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:backgroundTint="#FF0000"
                 android:fontFamily="sans-serif-medium"
-                android:text="@string/open_any_cells" />
-
-            <Button
-                android:id="@+id/button_set_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:backgroundTint="#FF0000"
-                android:text="@string/get_any_parcel" />
+                android:text="@string/get_request" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button_get_parcel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:backgroundTint="#FF0000"
-                android:text="@string/set_cell_status" />
-
-            <Button
-                android:id="@+id/button_get_status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:backgroundTint="#FF0000"
-                android:text="@string/get_status" />
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
