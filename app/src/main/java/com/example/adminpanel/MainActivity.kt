@@ -1,7 +1,9 @@
 package com.example.adminpanel
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         sendRequest()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun sendRequest() {
         GlobalScope.launch(Dispatchers.IO) {
             val url = "https://portal.trans-service-1.com.ua:40547"
@@ -51,6 +54,11 @@ class MainActivity : AppCompatActivity() {
                     val jsonResponse = JSONObject(responseData)
                     val code = jsonResponse.getInt("code")
                     val newContactCount = jsonResponse.getInt("new_contact_count")
+
+                    runOnUiThread {
+                        val textView = findViewById<TextView>(R.id.tv_result)
+                        textView.text = "Code: $code\nNew Contact Count: $newContactCount"
+                    }
 
                     // Вивід результату в лог
                     Log.d("MainActivity", "Code: $code")
