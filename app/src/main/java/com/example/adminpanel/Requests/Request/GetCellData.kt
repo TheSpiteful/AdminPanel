@@ -31,8 +31,74 @@ class GetCellData {
         try {
             val response = client.newCall(request).execute()
 
-            val responseData = response.body?.string()
+            var responseData = response.body?.string()
             if (responseData != null) {
+                responseData = """{
+  "cells": [
+    {
+      "id": "A1",
+      "size": 100,
+      "status": "free",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "A2",
+      "size": 100,
+      "status": "free",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "A3",
+      "size": 100,
+      "status": "busy",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "A4",
+      "size": 100,
+      "status": "free",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "A5",
+      "size": 300,
+      "status": "busy",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "B1",
+      "size": 100,
+      "status": "busy",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "B2",
+      "size": 100,
+      "status": "free",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "B3",
+      "size": 100,
+      "status": "service",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "B4",
+      "size": 100,
+      "status": "free",
+      "datetime": 1689321843000
+    },
+    {
+      "id": "B5",
+      "size": 300,
+      "status": "free",
+      "datetime": 1689321843000
+    }
+  ]
+}"""
+
+
                 val jsonResponse = JSONObject(responseData)
                 val code = jsonResponse.getInt("code")
                 val newContactCount = jsonResponse.getInt("new_contact_count")
