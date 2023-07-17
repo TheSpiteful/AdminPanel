@@ -1,4 +1,4 @@
-package com.example.adminpanel
+package com.example.adminpanel.Requests
 
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
@@ -97,7 +97,6 @@ class GetCellData {
     }
   ]
 }"""
-
 
                 val jsonResponse = JSONObject(responseData)
                 val code = jsonResponse.getInt("code")
