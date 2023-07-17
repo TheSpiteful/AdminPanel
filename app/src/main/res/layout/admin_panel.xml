@@ -54,12 +54,13 @@
                 android:layout_margin="8dp"
                 android:backgroundTint="#FF0000"
                 android:fontFamily="sans-serif-medium"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:text="@string/get_request" />
 
         </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
