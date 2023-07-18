@@ -5,9 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.adminpanel.Adapter.CellAdapter
 import com.example.adminpanel.Requests.GetCellData
 import com.example.adminpanel.Requests.RequestsActivity
 import kotlinx.coroutines.Dispatchers
