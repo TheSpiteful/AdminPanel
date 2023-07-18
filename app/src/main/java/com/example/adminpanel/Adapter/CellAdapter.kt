@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.adminpanel.Cell
 import com.example.adminpanel.R
 
-class CellAdapter(private val cells: List<Cell>) : RecyclerView.Adapter<CellAdapter.CellViewHolder>() {
+class CellAdapter(private val cells: ArrayList<Cell>) : RecyclerView.Adapter<CellAdapter.CellViewHolder>() {
 
     class CellViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvId: TextView = itemView.findViewById(R.id.tv_id)
@@ -18,7 +18,7 @@ class CellAdapter(private val cells: List<Cell>) : RecyclerView.Adapter<CellAdap
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CellViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.cell_item, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.rv_item, parent, false)
         return CellViewHolder(itemView)
     }
 
@@ -35,3 +35,5 @@ class CellAdapter(private val cells: List<Cell>) : RecyclerView.Adapter<CellAdap
         return cells.size
     }
 }
+
+

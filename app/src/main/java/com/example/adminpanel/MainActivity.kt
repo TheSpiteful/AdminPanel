@@ -1,11 +1,18 @@
+package com.example.adminpanel
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-import com.example.adminpanel.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.adminpanel.Adapter.CellAdapter
 import com.example.adminpanel.Requests.GetCellData
-import kotlinx.coroutines.*
+import com.example.adminpanel.Requests.RequestsActivity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun showResult(result: String) {
         val intent = Intent(this, RequestsActivity::class.java)
         intent.putExtra("result", result)
+
         startActivity(intent)
     }
 }
