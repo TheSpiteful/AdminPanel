@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         btnGetRequest.setOnClickListener {
             progressBar.visibility = ProgressBar.VISIBLE
             GlobalScope.launch(Dispatchers.IO) {
-                val getCellData = GetCellData()
-                val result = getCellData.sendRequest()
+                //val getCellData = GetCellData()
+                val result = GetCellData().sendRequest()
 
                 launch(Dispatchers.Main) {
                     progressBar.visibility = ProgressBar.INVISIBLE
@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     private fun showResult(result: String) {
         val intent = Intent(this, RequestsActivity::class.java)
         intent.putExtra("result", result)
+
 
         startActivity(intent)
     }

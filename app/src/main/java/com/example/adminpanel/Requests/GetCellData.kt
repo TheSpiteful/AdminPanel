@@ -98,11 +98,12 @@ class GetCellData {
   ]
 }"""
 
-                val jsonResponse = JSONObject(responseData)
-                val code = jsonResponse.getInt("code")
-                val newContactCount = jsonResponse.getInt("new_contact_count")
-
-                return "Code: $code\nNew Contact Count: $newContactCount"
+                return responseData
+//                val jsonResponse = JSONObject(responseData)
+//                val code = jsonResponse.getInt("code")
+//                val newContactCount = jsonResponse.getInt("new_contact_count")
+//
+//                return "Code: $code\nNew Contact Count: $newContactCount"
             } else {
                 return "Error: No response body"
             }
