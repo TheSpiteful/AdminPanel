@@ -28,12 +28,17 @@ class GetCellData {
             .build()
 
         val client = OkHttpClient()
-        try {
+        return try {
             val response = client.newCall(request).execute()
 
-            var responseData = response.body?.string()
-            if (responseData != null) {
-                responseData = """{
+            response.body?.string() ?: "Error: No response body"
+        } catch (e: IOException) {
+            "Error: ${e.message}"
+        }
+    }
+
+    fun getFakeResponse(): String {
+        return """{
   "cells": [
     {
       "id": "A1",
@@ -97,18 +102,5 @@ class GetCellData {
     }
   ]
 }"""
-
-                return responseData
-//                val jsonResponse = JSONObject(responseData)
-//                val code = jsonResponse.getInt("code")
-//                val newContactCount = jsonResponse.getInt("new_contact_count")
-//
-//                return "Code: $code\nNew Contact Count: $newContactCount"
-            } else {
-                return "Error: No response body"
-            }
-        } catch (e: IOException) {
-            return "Error: ${e.message}"
-        }
     }
 }

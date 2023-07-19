@@ -35,5 +35,3 @@ class CellAdapter(private val cells: ArrayList<Cell>) : RecyclerView.Adapter<Cel
         return cells.size
     }
 }
-
-
