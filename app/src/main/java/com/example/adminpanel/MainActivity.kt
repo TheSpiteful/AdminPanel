@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
+import com.example.adminpanel.Adapter.CellAdapter
 import com.example.adminpanel.Requests.GetCellData
 import com.example.adminpanel.Requests.RequestsActivity
 import kotlinx.coroutines.Dispatchers
@@ -26,8 +27,7 @@ class MainActivity : AppCompatActivity() {
         btnGetRequest.setOnClickListener {
             progressBar.visibility = ProgressBar.VISIBLE
             GlobalScope.launch(Dispatchers.IO) {
-                val getCellData = GetCellData()
-                val result = getCellData.getFakeResponse()
+                val result = GetCellData().getFakeResponse()
 
                 launch(Dispatchers.Main) {
                     progressBar.visibility = ProgressBar.INVISIBLE

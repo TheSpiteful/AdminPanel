@@ -8,9 +8,6 @@ import com.example.adminpanel.Adapter.CellAdapter
 import com.example.adminpanel.Cell
 import com.example.adminpanel.R
 import org.json.JSONObject
-import java.sql.Timestamp
-import java.text.SimpleDateFormat
-import java.util.*
 
 class RequestsActivity : AppCompatActivity() {
 
@@ -27,10 +24,10 @@ class RequestsActivity : AppCompatActivity() {
 
         cells = ArrayList()
 
-        cellAdapter = CellAdapter(cells)
+        cellAdapter = CellAdapter(this, cells) // Pass the context here
         recyclerView.adapter = cellAdapter
 
-        if (intent.hasExtra("result")) {
+        if(intent.hasExtra("result")){
             processResponse(intent.getStringExtra("result").toString())
         }
     }
@@ -47,13 +44,9 @@ class RequestsActivity : AppCompatActivity() {
                 val id = jsonCell.getString("id")
                 val size = jsonCell.getInt("size")
                 val status = jsonCell.getString("status")
-                val datetime = jsonCell.getLong("datetime")
+                val datetime = jsonCell.getString("datetime") // Assuming datetime is in string format
 
-                val date = Timestamp(datetime)
-                val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-                val formattedDateTime = format.format(date)
-
-                val cell = Cell(id, size, status, formattedDateTime)
+                val cell = Cell(id, size, status, datetime)
                 cells.add(cell)
             }
 

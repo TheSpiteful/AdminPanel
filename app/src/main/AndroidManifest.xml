@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.adminpanel.Requests.RequestsActivity" />
+        <activity
+            android:name="com.example.adminpanel.CellDetailsActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

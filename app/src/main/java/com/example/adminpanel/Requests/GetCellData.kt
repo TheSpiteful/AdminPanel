@@ -99,6 +99,36 @@ class GetCellData {
       "size": 300,
       "status": "free",
       "datetime": 1689321843000
+    },
+    {
+      "id": "C1",
+      "size": 100,
+      "status": "busy",
+      "datetime": 1689321745000
+    },
+    {
+      "id": "C2",
+      "size": 200,
+      "status": "free",
+      "datetime": 1689321746000
+    },
+    {
+      "id": "C3",
+      "size": 300,
+      "status": "free",
+      "datetime": 1689321747000
+    },
+    {
+      "id": "C4",
+      "size": 250,
+      "status": "busy",
+      "datetime": 1689321748000
+    },
+    {
+      "id": "C5",
+      "size": 150,
+      "status": "busy",
+      "datetime": 1689321748000
     }
   ]
 }"""
