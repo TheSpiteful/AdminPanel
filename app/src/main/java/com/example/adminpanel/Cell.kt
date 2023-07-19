@@ -4,5 +4,5 @@ data class Cell(
     val id: String,
     val size: Int,
     val status: String,
-    val datetime: Long
+    val datetime: String
 )
