@@ -48,7 +48,6 @@ class RequestsActivity : AppCompatActivity() {
                 val status = jsonCell.getString("status")
                 val timestamp = jsonCell.getLong("datetime") // Assuming datetime is in Unix timestamp format
 
-                // Convert timestamp to formatted date string
                 val formattedDatetime = convertTimestampToFormattedDate(timestamp)
 
                 val cell = Cell(id, size, status, formattedDatetime)
@@ -68,4 +67,3 @@ class RequestsActivity : AppCompatActivity() {
         return sdf.format(date)
     }
 }
-

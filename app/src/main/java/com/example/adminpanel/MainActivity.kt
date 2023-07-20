@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-import com.example.adminpanel.Adapter.CellAdapter
 import com.example.adminpanel.Requests.GetCellData
 import com.example.adminpanel.Requests.RequestsActivity
 import kotlinx.coroutines.Dispatchers
@@ -15,6 +14,7 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var progressBar: ProgressBar
+    private val cellsList = ArrayList<Cell>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,4 +42,10 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("result", result)
         startActivity(intent)
     }
+
+    fun updateCellStatus(cellId: String, newStatus: String) {
+        val cell = cellsList.find { it.id == cellId }
+        cell?.status = newStatus
+    }
 }
+

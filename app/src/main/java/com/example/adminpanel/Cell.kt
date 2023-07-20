@@ -6,7 +6,7 @@ import android.os.Parcelable
 data class Cell(
     val id: String,
     val size: Int,
-    val status: String,
+    var status: String,
     val datetime: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
