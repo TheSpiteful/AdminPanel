@@ -35,6 +35,7 @@ class CellAdapter(private val context: Context, private val cells: ArrayList<Cel
         holder.tvStatus.text = cell.status
         holder.tvDatetime.text = cell.datetime
 
+        // Handle item click
         holder.itemView.setOnClickListener {
             val intent = Intent(context, CellDetailsActivity::class.java)
             intent.putExtra("cell", cell)

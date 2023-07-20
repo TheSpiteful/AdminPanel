@@ -71,3 +71,4 @@ class CellDetailsActivity : AppCompatActivity() {
         tvStatus.text = cell.status
     }
 }
+

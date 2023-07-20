@@ -46,7 +46,7 @@ class RequestsActivity : AppCompatActivity() {
                 val id = jsonCell.getString("id")
                 val size = jsonCell.getInt("size")
                 val status = jsonCell.getString("status")
-                val timestamp = jsonCell.getLong("datetime") // Assuming datetime is in Unix timestamp format
+                val timestamp = jsonCell.getLong("datetime")
 
                 val formattedDatetime = convertTimestampToFormattedDate(timestamp)
 
@@ -60,7 +60,6 @@ class RequestsActivity : AppCompatActivity() {
         }
     }
 
-    // Function to convert Unix timestamp to formatted date string
     private fun convertTimestampToFormattedDate(timestamp: Long): String {
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
         val date = Date(timestamp)

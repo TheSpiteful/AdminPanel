@@ -14,7 +14,6 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var progressBar: ProgressBar
-    private val cellsList = ArrayList<Cell>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,10 +41,4 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("result", result)
         startActivity(intent)
     }
-
-    fun updateCellStatus(cellId: String, newStatus: String) {
-        val cell = cellsList.find { it.id == cellId }
-        cell?.status = newStatus
-    }
 }
-
