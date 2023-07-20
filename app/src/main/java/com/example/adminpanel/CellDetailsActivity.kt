@@ -1,24 +1,33 @@
 package com.example.adminpanel
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.adminpanel.R
 
 class CellDetailsActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cell_details)
 
         val cell = intent.getParcelableExtra<Cell>("cell")
 
-        val tvId = findViewById<TextView>(R.id.tv_id)
-        val tvSize = findViewById<TextView>(R.id.tv_size)
-        val tvStatus = findViewById<TextView>(R.id.tv_status)
-        val tvDatetime = findViewById<TextView>(R.id.tv_datetime)
+        val tvId: TextView = findViewById(R.id.tv_id)
+        val tvSize: TextView = findViewById(R.id.tv_size)
+        val tvStatus: TextView = findViewById(R.id.tv_status)
+        val tvDatetime: TextView = findViewById(R.id.tv_datetime)
 
-        tvId.text = cell?.id ?: "N/A"
-        tvSize.text = cell?.size.toString() ?: "N/A"
-        tvStatus.text = cell?.status ?: "N/A"
-        tvDatetime.text = cell?.datetime ?: "N/A"
+        val btnOpen: Button = findViewById(R.id.btn_open)
+        val btnChangeStatus: Button = findViewById(R.id.btn_change_status)
+
+        cell?.let {
+            tvId.text = it.id
+            tvSize.text = it.size.toString()
+            tvStatus.text = it.status
+            tvDatetime.text = it.datetime
+        }
     }
 }
+

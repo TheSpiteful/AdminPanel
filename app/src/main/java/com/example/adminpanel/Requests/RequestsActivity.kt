@@ -8,6 +8,8 @@ import com.example.adminpanel.Adapter.CellAdapter
 import com.example.adminpanel.Cell
 import com.example.adminpanel.R
 import org.json.JSONObject
+import java.text.SimpleDateFormat
+import java.util.*
 
 class RequestsActivity : AppCompatActivity() {
 
@@ -24,10 +26,10 @@ class RequestsActivity : AppCompatActivity() {
 
         cells = ArrayList()
 
-        cellAdapter = CellAdapter(this, cells) // Pass the context here
+        cellAdapter = CellAdapter(this, cells)
         recyclerView.adapter = cellAdapter
 
-        if(intent.hasExtra("result")){
+        if (intent.hasExtra("result")) {
             processResponse(intent.getStringExtra("result").toString())
         }
     }
@@ -44,9 +46,12 @@ class RequestsActivity : AppCompatActivity() {
                 val id = jsonCell.getString("id")
                 val size = jsonCell.getInt("size")
                 val status = jsonCell.getString("status")
-                val datetime = jsonCell.getString("datetime") // Assuming datetime is in string format
+                val timestamp = jsonCell.getLong("datetime") // Assuming datetime is in Unix timestamp format
 
-                val cell = Cell(id, size, status, datetime)
+                // Convert timestamp to formatted date string
+                val formattedDatetime = convertTimestampToFormattedDate(timestamp)
+
+                val cell = Cell(id, size, status, formattedDatetime)
                 cells.add(cell)
             }
 
@@ -55,4 +60,12 @@ class RequestsActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+
+    // Function to convert Unix timestamp to formatted date string
+    private fun convertTimestampToFormattedDate(timestamp: Long): String {
+        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val date = Date(timestamp)
+        return sdf.format(date)
+    }
 }
+
