@@ -53,10 +53,9 @@ class CellDetailsActivity : AppCompatActivity() {
                     R.id.radioButtonFree -> "free"
                     R.id.radioButtonBusy -> "busy"
                     R.id.radioButtonService -> "service"
-                    else -> cell.status // Keep the current status if nothing is selected
+                    else -> cell.status
                 }
 
-                // Update the status and refresh the UI
                 cell.status = selectedStatus
                 updateCellDetailsUI()
             }
