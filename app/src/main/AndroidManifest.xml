@@ -25,6 +25,6 @@
             android:name="com.example.adminpanel.CellDetailsActivity"
             android:exported="true" />
     </application>
-
+    
 </manifest>
 

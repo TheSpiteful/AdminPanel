@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     // Запуск асинхронного запиту на отримання даних
             GlobalScope.launch(Dispatchers.IO) {
-                val result = GetCellData().getFakeResponse()
+                val result = GetCellData().getFakeResponce()
 
     // Перехід до головного потоку UI для відображення результату
                 launch(Dispatchers.Main) {
